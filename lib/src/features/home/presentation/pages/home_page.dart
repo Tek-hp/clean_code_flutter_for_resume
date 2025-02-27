@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                HomeBody(currentTab: state.tab)
+                HomeBody(currentTab: state.tab),
               ],
             ),
           ),
