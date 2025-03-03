@@ -13,25 +13,20 @@ class HomeBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CircleAvatar(
-            radius: 200,
-            backgroundColor: Colors.lightBlue,
+          Container(
+            height: 300,
+            width: 300,
+            clipBehavior: Clip.hardEdge,
+            decoration: BoxDecoration(shape: BoxShape.circle),
+            child: Image.asset('assets/images/pp.jpeg', fit: BoxFit.fitWidth),
           ),
-          SizedBox(
-            width: 40,
-          ),
+          SizedBox(width: 40),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Hello',
-                style: TextStyle(fontSize: 54),
-              ),
-              Text(
-                'A bit about me',
-                style: TextStyle(fontSize: 18),
-              ),
+              Text('Hello', style: TextStyle(fontSize: 54)),
+              Text('A bit about me', style: TextStyle(fontSize: 18)),
               SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
                 child: Text(
