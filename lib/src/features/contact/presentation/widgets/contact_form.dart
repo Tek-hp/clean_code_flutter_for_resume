@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:resume/src/utils/custom_text_field.dart';
+import 'package:resume/src/utils/widgets/custom_text_field.dart';
 
 class ContactForm extends StatelessWidget {
   const ContactForm({super.key});

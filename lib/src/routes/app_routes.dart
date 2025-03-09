@@ -6,6 +6,7 @@ import 'package:resume/src/features/home/presentation/widgets/header.dart';
 import 'package:resume/src/features/home/presentation/widgets/selection_tab.dart';
 import 'package:resume/src/features/projects/presentation/pages/projects_page.dart';
 import 'package:resume/src/features/resume/presentation/pages/resume_page.dart';
+import 'package:resume/src/utils/constants/text_constants.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _tabNavigatorKey = GlobalKey<NavigatorState>();
@@ -17,21 +18,42 @@ final router = GoRouter(
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return Scaffold(
-          body: navigationShell,
+          body: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 50,
+              vertical: 80,
+            ),
+            child: navigationShell,
+          ),
           appBar: AppBar(
             bottom: PreferredSize(
               preferredSize: Size(double.infinity, 25),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10,
+                ),
                 child: Row(
                   children: [
-                    Header(headerTitle: 'Tek', onTap: () => context.go('/home')),
+                    Header(
+                      name: TextConstants.name,
+                      designation: TextConstants.designation,
+                      onTap: () => context.go('/home'),
+                    ),
                     Spacer(),
-                    SelectionTab(label: 'Resume', onTap: () => context.go('/resume')),
+                    SelectionTab(
+                      label: 'Resume',
+                      onTap: () => context.go('/resume'),
+                    ),
                     SizedBox(width: 20),
-                    SelectionTab(label: 'Projects', onTap: () => context.go('/projects')),
+                    SelectionTab(
+                      label: 'Projects',
+                      onTap: () => context.go('/projects'),
+                    ),
                     SizedBox(width: 20),
-                    SelectionTab(label: 'Contact', onTap: () => context.go('/contact')),
+                    SelectionTab(
+                      label: 'Contact',
+                      onTap: () => context.go('/contact'),
+                    ),
                   ],
                 ),
               ),
