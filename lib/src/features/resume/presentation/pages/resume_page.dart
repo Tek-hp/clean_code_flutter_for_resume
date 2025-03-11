@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:resume/src/features/resume/data/models/experience_model.dart';
 import 'package:resume/src/features/resume/presentation/bloc/resume_bloc.dart';
 import 'package:resume/src/features/resume/presentation/widgets/experience_tile.dart';
 
