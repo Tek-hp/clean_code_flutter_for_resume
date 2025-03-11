@@ -1,51 +1,91 @@
 import 'package:flutter/material.dart';
+import 'package:resume/src/features/resume/data/models/experience_model.dart';
 
-class ResumeTile extends StatelessWidget {
-  const ResumeTile({
+class ExperienceTile extends StatelessWidget {
+  const ExperienceTile({
     super.key,
-    required this.sectionTitle,
-    required this.duration,
+    required this.experience,
   });
 
-  final String sectionTitle;
-  final String duration;
-  
+  final Experience experience;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          sectionTitle,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
+    return Container(
+      padding: EdgeInsets.only(left: 10),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            experience.designation,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          SizedBox(width: 30),
+          Spacer(),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
 
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(duration),
-
-            SizedBox(width: 30),
-            SizedBox(
-              width: 400,
-              child: Column(
-                crossAxisAlignment:
-                    CrossAxisAlignment.start,
+            children: [
+              Row(
                 children: [
-                  Text('Flutter Developer'),
-                  SizedBox(height: 10),
                   Text(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                    maxLines: null,
+                    experience.duration,
+                    style:
+                        Theme.of(
+                          context,
+                        ).textTheme.bodySmall,
+                  ),
+
+                  SizedBox(width: 10),
+                  Text(
+                    '(${experience.company})',
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall!.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: Colors.grey,
+                    ),
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
-      ],
+              SizedBox(width: 30),
+
+              SizedBox(
+                width: 400,
+                child: Column(
+                  crossAxisAlignment:
+                      CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      experience.jobSummary,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    for (var description
+                        in experience.descriptions)
+                      Text(
+                        '• $description\n',
+                        maxLines: null,
+                        style:
+                            Theme.of(
+                              context,
+                            ).textTheme.bodySmall,
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
