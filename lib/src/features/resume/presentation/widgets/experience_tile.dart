@@ -13,16 +13,15 @@ class ExperienceTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: 10),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-      ),
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             experience.designation,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: Theme.of(context).textTheme.bodySmall!
+                .copyWith(fontWeight: FontWeight.w600),
           ),
           SizedBox(width: 30),
           Spacer(),

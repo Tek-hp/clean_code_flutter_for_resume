@@ -1,18 +1,21 @@
 part of 'resume_bloc.dart';
 
 class ResumeState extends Equatable {
-  const ResumeState({this.experiences, this.education});
+  const ResumeState({
+    this.experiences,
+    this.skills,
+  });
 
   final List<Experience>? experiences;
-  final List<Education>? education;
+  final List<Skill>? skills;
 
   ResumeState copyWith({
     List<Experience>? expeirences,
-    List<Education>? education,
+    final List<Skill>? skills,
   }) {
     return ResumeState(
       experiences: expeirences,
-      education: education,
+      skills: skills,
     );
   }
 
