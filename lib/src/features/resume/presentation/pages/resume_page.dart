@@ -31,8 +31,6 @@ class ResumePage extends StatelessWidget {
                 for (var experience in state.experiences!)
                   ExperienceTile(experience: experience),
               SizedBox(height: 20),
-              ResumeSectionTile(sectionTitle: 'Education'),
-              SizedBox(height: 20),
               ResumeSectionTile(
                 sectionTitle: 'Skills & expertise',
               ),
