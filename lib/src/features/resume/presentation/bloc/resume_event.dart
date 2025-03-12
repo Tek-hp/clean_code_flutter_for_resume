@@ -1,6 +1,6 @@
 part of 'resume_bloc.dart';
 
-abstract class ResumeEvent extends Equatable {
+class ResumeEvent extends Equatable {
   const ResumeEvent();
 
   @override

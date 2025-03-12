@@ -21,7 +21,6 @@ final router = GoRouter(
           body: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 50,
-              vertical: 80,
             ),
             child: navigationShell,
           ),
@@ -36,7 +35,8 @@ final router = GoRouter(
                   children: [
                     Header(
                       name: TextConstants.name,
-                      designation: TextConstants.designation,
+                      designation:
+                          TextConstants.designation,
                       onTap: () => context.go('/home'),
                     ),
                     Spacer(),

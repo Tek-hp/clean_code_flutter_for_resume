@@ -35,9 +35,8 @@ class Header extends StatelessWidget {
               SizedBox(width: 10),
               Text(
                 designation,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium,
+                style:
+                    Theme.of(context).textTheme.bodyMedium,
               ),
             ],
           ),
